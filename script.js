@@ -21,14 +21,21 @@ for (const [code, station] of Object.entries(stations)){
 }
 
 let linesObjs = [];
-stnSelector.value = "CEN";
+
+const savedStation = localStorage.getItem("station");
+if (savedStation) {
+    stnSelector.value = savedStation;
+}
+else{
+    stnSelector.value = "ADM";
+}
+
 update();
 
 stnSelector.addEventListener("change", () => {
+    localStorage.setItem("station", stnSelector.value);
     update();
 });
-
-stnSelector.value = "ADM";
 
 setInterval(update, 10000);
 
