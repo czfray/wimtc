@@ -18,67 +18,30 @@
             <span class="medium">When is my <span class="red">train</span> coming?</span>
         </h1>
 
+        <p id = "time" class = "dirtywhite center thin extrasmall">
+            最後更新 Last Update: NA
+        </p>
+
         <br>
-        <select id="selectStn" class="dirtywhite"></select>
+            <select id="selectStn" class="dirtywhite"></select>
+        <br>
 
-        
-        <h2 class="dirtywhite small bold center"><br>港島綫 Island Line</h2>
-        <p class="train white center">
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-        </p>
+        <div id="trainList"></div>
 
-        <h2 class="dirtywhite small bold center"><br>港島綫 Island Line</h2>
-        <p class="train white center">
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>車公廟 Che Kung Temple</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-            <span>99</span>
-        </p>
+        <template id="lineTemplate">
+            <h2 class="lineName dirtywhite small bold center"></h2>
+            <div class="trains"></div>
+        </template>
+
+        <template id="trainTemplate">
+            <p class="train white center">
+                <span class="trainName"></span>
+                <span class="trainMin0"></span>
+                <span class="trainMin1"></span>
+                <span class="trainMin2"></span>
+                <span class="trainMin3"></span>
+            </p>
+        </template>
         
     </body>
 

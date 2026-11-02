@@ -34,7 +34,11 @@ p {
 }
 
 .small {
-    font-size: clamp(18px, 4vw, 27px);
+    font-size: clamp(18px, 3vw, 27px);
+}
+
+.extrasmall {
+    font-size: clamp(13px, 3vw, 18px);
 }
 
 .bold{
@@ -59,10 +63,10 @@ p {
 
 .train {
     display: grid;
-    grid-template-columns: 6fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
     align-items: center;
     text-align: center;
-    gap: 3px;
+    gap: 2px;
     padding: 5px;
 }
 
