@@ -1,0 +1,26 @@
+body {
+    background-color: #2f3542;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Xmind', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.big {
+    font-size: 70px;
+}
+
+.medium {
+    font-size: 40px;
+}
+
+.red {
+    color: #ff4757;
+}
+
+.white {
+    color: #ffffff;
+}
