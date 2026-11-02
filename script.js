@@ -28,6 +28,7 @@ if (savedStation && stations[savedStation]) {
 }
 else{
     stnSelector.value = "ADM";
+    localStorage.setItem("station", "ADM");
 }
 
 update();
