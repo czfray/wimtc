@@ -10,11 +10,11 @@ h1 {
 }
 
 .big {
-    font-size: 90px;
+    font-size: 40px;
 }
 
 .medium {
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .red {
@@ -27,15 +27,17 @@ h1 {
 
 select {
     padding: 10px;
-    font-size: 50px;
+    font-size: 25px;
     border: 5px solid #a4b0be;
     border-radius: 8px;
-    width: 600px;
+    width: 250px;
     background-color: #57606f;
     text-align: center;
     font-family: 'Xmind', sans-serif;
+    text-align-last: center;
     color:#dfe4ea;
     display: block;
     margin: 0 auto;
     appearance: none;
+    -webkit-appearance: none;
 }
