@@ -1,0 +1,203 @@
+{
+  "AEL": {
+    "name": {
+      "en": "Airport Express",
+      "tc": "機場快綫"
+    },
+    "stations": [
+      "HOK",
+      "KOW",
+      "TSY",
+      "AIR",
+      "AWE"
+    ]
+  },
+  "TCL": {
+    "name": {
+      "en": "Tung Chung Line",
+      "tc": "東涌綫"
+    },
+    "stations": [
+      "HOK",
+      "KOW",
+      "OLY",
+      "NAC",
+      "LAK",
+      "TSY",
+      "SUN",
+      "TUC"
+    ]
+  },
+  "TML": {
+    "name": {
+      "en": "Tuen Ma Line",
+      "tc": "屯馬綫"
+    },
+    "stations": [
+      "WKS",
+      "MOS",
+      "HEO",
+      "TSH",
+      "SHM",
+      "CIO",
+      "STW",
+      "CKT",
+      "TAW",
+      "HIK",
+      "DIH",
+      "KAT",
+      "SUW",
+      "TKW",
+      "HOM",
+      "HUH",
+      "ETS",
+      "AUS",
+      "NAC",
+      "MEF",
+      "TWW",
+      "KSR",
+      "YUL",
+      "LOP",
+      "TIS",
+      "SIH",
+      "TUM"
+    ]
+  },
+  "TKL": {
+    "name": {
+      "en": "Tseung Kwan O Line",
+      "tc": "將軍澳綫"
+    },
+    "stations": [
+      "NOP",
+      "QUB",
+      "YAT",
+      "TIK",
+      "TKO",
+      "LHP",
+      "HAH",
+      "POA"
+    ]
+  },
+  "EAL": {
+    "name": {
+      "en": "East Rail Line",
+      "tc": "東鐵綫"
+    },
+    "stations": [
+      "ADM",
+      "EXC",
+      "HUH",
+      "MKK",
+      "KOT",
+      "TAW",
+      "SHT",
+      "FOT",
+      "RAC",
+      "UNI",
+      "TAP",
+      "TWO",
+      "FAN",
+      "SHS",
+      "LOW",
+      "LMC"
+    ]
+  },
+  "SIL": {
+    "name": {
+      "en": "South Island Line",
+      "tc": "南港島綫"
+    },
+    "stations": [
+      "ADM",
+      "OCP",
+      "WCH",
+      "LET",
+      "SOH"
+    ]
+  },
+  "TWL": {
+    "name": {
+      "en": "Tsuen Wan Line",
+      "tc": "荃灣綫"
+    },
+    "stations": [
+      "CEN",
+      "ADM",
+      "TST",
+      "JOR",
+      "YMT",
+      "MOK",
+      "PRE",
+      "SSP",
+      "CSW",
+      "LCK",
+      "MEF",
+      "LAK",
+      "KWF",
+      "KWH",
+      "TWH",
+      "TSW"
+    ]
+  },
+  "ISL": {
+    "name": {
+      "en": "Island Line",
+      "tc": "港島綫"
+    },
+    "stations": [
+      "KET",
+      "HKU",
+      "SYP",
+      "SHW",
+      "CEN",
+      "ADM",
+      "WAC",
+      "CAB",
+      "TIH",
+      "FOH",
+      "NOP",
+      "QUB",
+      "TAK",
+      "SWH",
+      "SKW",
+      "HFC",
+      "CHW"
+    ]
+  },
+  "KTL": {
+    "name": {
+      "en": "Kwun Tong Line",
+      "tc": "觀塘綫"
+    },
+    "stations": [
+      "WHA",
+      "HOM",
+      "YMT",
+      "MOK",
+      "PRE",
+      "SKM",
+      "KOT",
+      "LOF",
+      "WTS",
+      "DIH",
+      "CHH",
+      "KOB",
+      "NTK",
+      "KWT",
+      "LAT",
+      "YAT",
+      "TIK"
+    ]
+  },
+  "DRL": {
+    "name": {
+      "en": "Disneyland Resort Line",
+      "tc": "迪士尼綫"
+    },
+    "stations": [
+      "SUN",
+      "DIS"
+    ]
+  }
+}

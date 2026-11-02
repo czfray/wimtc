@@ -3,10 +3,26 @@ body {
 }
 
 h1 {
-    text-align: center;
     font-family: 'Xmind', sans-serif;
-    font-weight: 700;
     font-style: normal;
+}
+
+h2 {
+    font-family: 'Xmind', sans-serif;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Xmind', sans-serif;
+    font-style: normal;
+}
+
+.center{
+    text-align: center;
+}
+
+.left{
+    text-align: left;
 }
 
 .big {
@@ -17,6 +33,18 @@ h1 {
     font-size: clamp(20px, 4vw, 30px);
 }
 
+.small {
+    font-size: clamp(18px, 4vw, 27px);
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.thin{
+    font-weight: 400;
+}
+
 .red {
     color: #ff4757;
 }
@@ -25,9 +53,22 @@ h1 {
     color: #ffffff;
 }
 
+.dirtywhite{
+    color: #dfe4ea;
+}
+
+.train {
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    padding: 5px;
+}
+
 select {
     padding: 10px;
-    font-size: clamp(18px, 3vw, 30px);
+    font-size: clamp(14px, 3vw, 18px);
     border: 3px solid #a4b0be;
     border-radius: 8px;
     width: 250px;
@@ -35,7 +76,6 @@ select {
     text-align: center;
     font-family: 'Xmind', sans-serif;
     text-align-last: center;
-    color:#dfe4ea;
     display: block;
     margin: 0 auto;
     appearance: none;
