@@ -23,7 +23,7 @@ for (const [code, station] of Object.entries(stations)){
 let linesObjs = [];
 
 const savedStation = localStorage.getItem("station");
-if (savedStation) {
+if (savedStation && stations[savedStation]) {
     stnSelector.value = savedStation;
 }
 else{
