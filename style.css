@@ -10,11 +10,11 @@ h1 {
 }
 
 .big {
-    font-size: clamp(24px, 7vw, 40px);
+    font-size: clamp(35px, 7vw, 50px);
 }
 
 .medium {
-    font-size: clamp(14px, 4vw, 20px);
+    font-size: clamp(20px, 4vw, 30px);
 }
 
 .red {
@@ -27,10 +27,10 @@ h1 {
 
 select {
     padding: 10px;
-    font-size: clamp(10px, 5vw, 17px);
+    font-size: 18px;
     border: 3px solid #a4b0be;
     border-radius: 8px;
-    width: clamp(160px, 5vw, 300px);
+    width: 250px;
     background-color: #57606f;
     text-align: center;
     font-family: 'Xmind', sans-serif;
