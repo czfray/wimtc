@@ -28,7 +28,7 @@ stnSelector.addEventListener("change", () => {
     update();
 });
 
-stnSelector.value = "CEN";
+stnSelector.value = "ADM";
 
 setInterval(update, 10000);
 
