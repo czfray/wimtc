@@ -71,6 +71,10 @@ p {
     margin: 0px 0;
 }
 
+.top{
+    margin-top: 50px;
+}
+
 select {
     padding: 10px;
     font-size: clamp(14px, 3vw, 18px);
