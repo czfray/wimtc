@@ -67,6 +67,9 @@ p {
     align-items: center;
     text-align: center;
     gap: 2px;
+}
+
+.nomargin{
     padding: 5px;
     margin: 0px 0;
 }

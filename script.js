@@ -10,6 +10,7 @@ const timeShower = document.getElementById("time");
 const trainList = document.getElementById("trainList");
 const lineTemplate = document.getElementById("lineTemplate");
 const trainTemplate = document.getElementById("trainTemplate");
+const failureTemplate = document.getElementById("failureTemplate");
 
 let time;
 
@@ -56,9 +57,15 @@ async function updateLists(){
         const mtrData = await requestMTRData(line, station);
         console.log(`Got MTR Data of ${line} in station ${station}`);
 
+        const trains = getTrains(mtrData, line, station);
+        if (Object.keys(trains).length <= 0) {
+            console.log(`Line ${line} has no more train.`);
+            continue;
+        }
+
         let lineObj = {
             line: line,
-            trains: getTrains(mtrData, line, station)
+            trains: trains
         }
         linesObjs.push(lineObj);
 
@@ -98,9 +105,18 @@ function updateVisuals(){
         }
         lineVisual.appendChild(trainContainer);
         trainList.appendChild(lineVisual);
-
-        timeShower.textContent = "最後更新 Last Update: " + time;
     }
+
+    if (linesObjs.length <= 0){
+        const noTrainsVisual = failureTemplate.content.cloneNode(true);
+        noTrainsVisual.querySelector(".failtc").textContent = "呢個站依家冇車，或者個app壞咗";
+        noTrainsVisual.querySelector(".failen").textContent = "Stopped service or connection failure";
+        trainList.appendChild(noTrainsVisual);
+        
+        trainList.appendChild(noTrainsVisual);
+    }
+
+    timeShower.textContent = "最後更新 Last Update: " + time;
 }
 
 async function requestMTRData(line, station){
