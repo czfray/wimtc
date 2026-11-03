@@ -66,6 +66,10 @@ p {
     color: #7bed9f;
 }
 
+.gray{
+    color: #a4b0be;
+}
+
 .train {
     display: grid;
     grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
