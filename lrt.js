@@ -10,6 +10,7 @@ const lrtTemplate = document.getElementById("lrtTemplate");
 const failureTemplate = document.getElementById("failureTemplate");
 
 let time;
+let isUpdating = false;
 
 for (const [code, station] of Object.entries(stations)){
     const newOption = document.createElement("option");
@@ -39,8 +40,16 @@ stnSelector.addEventListener("change", () => {
 setInterval(update, 5000);
 
 async function update(){
-    await updateLists();
-    updateVisuals();
+    if (isUpdating) return;
+    isUpdating = true;
+    try {
+        await updateLists();
+        updateVisuals();
+    } catch (error) {
+        console.error("Update failed:", error);
+    } finally {
+        isUpdating = false;
+    }
 }
 
 function updateVisuals(){
