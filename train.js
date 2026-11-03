@@ -5,6 +5,7 @@ response = await fetch("lines.json");
 const lines = await response.json();
 
 const stnSelector = document.getElementById("selectStn");
+const stnDatalist = document.getElementById("stations");
 const timeShower = document.getElementById("time");
 
 const trainList = document.getElementById("trainList");
@@ -14,23 +15,25 @@ const failureTemplate = document.getElementById("failureTemplate");
 
 let time;
 let isUpdating = false;
+let reverseStationNameSearch = {};
 
 for (const [code, station] of Object.entries(stations)){
     const newOption = document.createElement("option");
-    newOption.value = code;
-    newOption.textContent = station["name"]["tc"] + " " + station["name"]["en"];
-    stnSelector.appendChild(newOption);
+    newOption.value = station["name"]["tc"] + " " + station["name"]["en"];
+    newOption.textContent = code;
+    stnDatalist.appendChild(newOption);
+    reverseStationNameSearch[newOption.value] = code;
 }
 
 let linesObjs = [];
 
 const savedStation = localStorage.getItem("station");
-if (savedStation && stations[savedStation]) {
+if (savedStation && stations[reverseStationNameSearch[savedStation]]) {
     stnSelector.value = savedStation;
 }
 else{
-    stnSelector.value = "ADM";
-    localStorage.setItem("station", "ADM");
+    stnSelector.value = stations["ADM"].name.tc + " " + stations["ADM"].name.en;
+    localStorage.setItem("station", stations["ADM"].name.tc + " " + stations["ADM"].name.en);
 }
 
 update();
@@ -59,7 +62,12 @@ async function updateLists(){
     console.log("Updating lists...");
 
     linesObjs = [];
-    const station = stnSelector.value;
+    const station = reverseStationNameSearch[stnSelector.value];
+    if (!station) {
+        console.log("Invalid station selected: " + stnSelector.value);
+        return;
+    }
+
     console.log("Updating station: " + station);
     for (const line of stations[station].lines){
         console.log("Updating line: " + line);
