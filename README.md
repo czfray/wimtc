@@ -34,8 +34,9 @@ Simply select an MTR or Light Rail station to view the next trains across its su
 | Indicator | Meaning |
 |---|---|
 | `0–99` | Estimated minutes until arrival |
-| `Arr` | Train arriving |
-| `Lft` | Light Rail train departing |
+| `Arr` | Train about to arrive at the station |
+| `Stp` | Train stopped at the station, about to depart (LRT Only) |
+| `Lft` | Train departed (LRT Only) |
 | `-` | No arrival prediction available for that slot |
 
 ## Technologies
