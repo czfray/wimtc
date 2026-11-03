@@ -28,8 +28,14 @@ for (const [code, line] of Object.entries(lines)){
     lineSelector.appendChild(newOption);
 }
 
+for (const [code, station] of Object.entries(stations)) {
+    const newOption = document.createElement("option");
+    newOption.value = code;
+    newOption.textContent = station["name"]["tc"] + " " + station["name"]["en"];
+    stnSelector.appendChild(newOption);
+}
+
 let linesObjs = [];
-setStnSelectorOptions();
 
 const savedStation = localStorage.getItem("station");
 if (savedStation && stations[savedStation]) {
@@ -73,10 +79,8 @@ function setStnSelectorOptions(){
         stnSelector.value = previousStation;
     } else {
         stnSelector.selectedIndex = 0;
-        if (previousStation){
-            localStorage.setItem("station", stnSelector.value);
-        }
     }
+    localStorage.setItem("station", stnSelector.value);
     
     update();
 }
@@ -162,6 +166,7 @@ function updateVisuals(){
         trainList.appendChild(noTrainsVisual);
     }
 
+    if (!time) time = "NA";
     timeShower.textContent = "最後更新 Last Update: " + time;
 }
 
