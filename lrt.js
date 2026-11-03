@@ -44,10 +44,11 @@ async function update(){
     isUpdating = true;
     try {
         await updateLists();
-        updateVisuals();
     } catch (error) {
+        platformObjs = [];
         console.error("Update failed:", error);
     } finally {
+        updateVisuals();
         isUpdating = false;
     }
 }
@@ -84,7 +85,7 @@ function updateVisuals(){
 
     if (platformObjs.length <= 0){
         const noLrtVisual = failureTemplate.content.cloneNode(true);
-        noLrtVisual.querySelector(".failtc").textContent = "呢個站依家冇車，或者個app壞咗";
+        noLrtVisual.querySelector(".failtc").textContent = "呢個站依家冇車 或者連唔到線";
         noLrtVisual.querySelector(".failen").textContent = "Stopped service or connection failure";
         lrtList.appendChild(noLrtVisual);
     }

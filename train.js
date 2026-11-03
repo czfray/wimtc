@@ -90,10 +90,11 @@ async function update(){
     isUpdating = true;
     try {
         await updateLists();
-        updateVisuals();
     } catch (error) {
+        linesObjs = [];
         console.error("Update failed:", error);
     } finally {
+        updateVisuals();
         isUpdating = false;
     }
 }
@@ -161,7 +162,7 @@ function updateVisuals(){
 
     if (linesObjs.length <= 0){
         const noTrainsVisual = failureTemplate.content.cloneNode(true);
-        noTrainsVisual.querySelector(".failtc").textContent = "呢個站依家冇車，或者個app壞咗";
+        noTrainsVisual.querySelector(".failtc").textContent = "呢個站依家冇車 或者連唔到線";
         noTrainsVisual.querySelector(".failen").textContent = "Stopped service or connection failure";
         trainList.appendChild(noTrainsVisual);
     }
