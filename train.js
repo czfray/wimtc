@@ -4,6 +4,7 @@ const stations = await response.json();
 response = await fetch("lines.json");
 const lines = await response.json();
 
+const lineSelector = document.getElementById("selectLine");
 const stnSelector = document.getElementById("selectStn");
 const timeShower = document.getElementById("time");
 
@@ -15,14 +16,20 @@ const failureTemplate = document.getElementById("failureTemplate");
 let time;
 let isUpdating = false;
 
-for (const [code, station] of Object.entries(stations)){
+const allLinesOption = document.createElement("option");
+allLinesOption.value = "ALL";
+allLinesOption.textContent = "全部路綫 All Lines";
+lineSelector.appendChild(allLinesOption);
+
+for (const [code, line] of Object.entries(lines)){
     const newOption = document.createElement("option");
     newOption.value = code;
-    newOption.textContent = station["name"]["tc"] + " " + station["name"]["en"];
-    stnSelector.appendChild(newOption);
+    newOption.textContent = line["name"]["tc"] + " " + line["name"]["en"];
+    lineSelector.appendChild(newOption);
 }
 
 let linesObjs = [];
+setStnSelectorOptions();
 
 const savedStation = localStorage.getItem("station");
 if (savedStation && stations[savedStation]) {
@@ -32,7 +39,6 @@ else{
     stnSelector.value = "ADM";
     localStorage.setItem("station", "ADM");
 }
-
 update();
 
 stnSelector.addEventListener("change", () => {
@@ -40,7 +46,40 @@ stnSelector.addEventListener("change", () => {
     update();
 });
 
+lineSelector.addEventListener("change", () => {
+    setStnSelectorOptions();
+});
+
 setInterval(update, 5000);
+
+function setStnSelectorOptions(){
+    const previousStation = stnSelector.value;
+    stnSelector.replaceChildren();
+    
+    let stationsInLine = Object.keys(stations);
+    if (lineSelector.value != "ALL"){
+        stationsInLine = lines[lineSelector.value].stations;
+    }
+    
+    for (const stationCode of stationsInLine) {
+        const newOption = document.createElement("option");
+        const station = stations[stationCode];
+        newOption.value = stationCode;
+        newOption.textContent = station["name"]["tc"] + " " + station["name"]["en"];
+        stnSelector.appendChild(newOption);
+    }
+    
+    if (stationsInLine.includes(previousStation)) {
+        stnSelector.value = previousStation;
+    } else {
+        stnSelector.selectedIndex = 0;
+        if (previousStation){
+            localStorage.setItem("station", stnSelector.value);
+        }
+    }
+    
+    update();
+}
 
 async function update(){
     if (isUpdating) return;
