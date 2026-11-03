@@ -133,7 +133,12 @@ function getLRTs(route_list){
         }
         lrts[[route_no, route.dest_en, route.dest_ch]].push(time);
     }
-    return lrts;
+
+    return Object.fromEntries(
+        Object.entries(lrts).sort((a, b) =>
+            a[0].split(",")[0].localeCompare(b[0].split(",")[0])
+        )
+    );
 }
 
 async function requestLRTData(station){
