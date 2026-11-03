@@ -135,10 +135,11 @@ function getLRTs(route_list){
         } else if (time.includes("min")){
             time = time.replace("min", "").trim();
         } else if (time.toLowerCase() == "departing"){
-            time = "Lft";
-        }
-        else {
+            time = "Stp";
+        } else if (time.toLowerCase() == "arriving"){
             time = "Arr";
+        } else {
+            time = "Lft";
         }
         lrts[[route_no, route.dest_en, route.dest_ch]].push(time);
     }
