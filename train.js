@@ -39,7 +39,7 @@ stnSelector.addEventListener("change", () => {
     update();
 });
 
-setInterval(update, 10000);
+setInterval(update, 5000);
 
 async function update(){
     await updateLists();
@@ -97,7 +97,7 @@ function updateVisuals(){
                         minText = "Arr";
                     }
                 } else {
-                    minText = "NA";
+                    minText = "-";
                 }
                 trainVisual.querySelector(".trainMin" + i).textContent = minText;
             }
@@ -111,8 +111,6 @@ function updateVisuals(){
         const noTrainsVisual = failureTemplate.content.cloneNode(true);
         noTrainsVisual.querySelector(".failtc").textContent = "呢個站依家冇車，或者個app壞咗";
         noTrainsVisual.querySelector(".failen").textContent = "Stopped service or connection failure";
-        trainList.appendChild(noTrainsVisual);
-        
         trainList.appendChild(noTrainsVisual);
     }
 

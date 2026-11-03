@@ -1,5 +1,10 @@
 <html>
     <head>
+
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        
         <title>我架輕鐵幾時嚟 WIMLRC</title>
         <meta name="description" content="即時查詢新界西輕鐵到站時間 Check real-time LRT arrival times in New Territories">
 
@@ -15,9 +20,6 @@
 
     </head>
     <body>
-
-        <br>
-        <button onclick="window.location.href='index.html'" class="mtrbut">轉地鐵 MTR</button>
 
         <h1 class="white bold center top">
             <span class="big">我架<span class="green">輕鐵</span>幾時嚟？</span>
@@ -42,11 +44,10 @@
 
         <template id="lrtTemplate">
             <p class="lrt white center nomargin">
-                <span class="lrtName"></span>
+                <span class="lrtNo"></span>
+                <span class="lrtDest"></span>
                 <span class="lrtMin0"></span>
                 <span class="lrtMin1"></span>
-                <span class="lrtMin2"></span>
-                <span class="lrtMin3"></span>
             </p>
         </template>
 
@@ -55,6 +56,9 @@
             <p class="failtc dirtywhite small bold center nomargin"></p>
             <p class="failen dirtywhite small thin center nomargin"></p>
         </template>
+
+        <br>
+        <button onclick="window.location.href='index.html'" class="mtrbut">轉地鐵 MTR</button>
         
     </body>
 

@@ -1,5 +1,10 @@
 <html>
     <head>
+
+        <link rel="manifest" href="manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
         <title>我架地鐵幾時嚟 WIMTC</title>
         <meta name="description" content="即時查詢香港港鐵列車到站時間 Check real-time MTR train arrival times in Hong Kong">
 
@@ -15,8 +20,6 @@
 
     </head>
     <body>
-        <br>
-        <button onclick="window.location.href='lrt.html'" class="lrtbut">轉輕鐵 LRT</button>
         
         <h1 class="white bold center top">
             <span class="big">我架<span class="red">地鐵</span>幾時嚟？</span>
@@ -54,6 +57,9 @@
             <p class="failtc dirtywhite small bold center nomargin"></p>
             <p class="failen dirtywhite small thin center nomargin"></p>
         </template>
+
+        <br>
+        <button onclick="window.location.href='lrt.html'" class="lrtbut">轉輕鐵 LRT</button>
         
     </body>
 

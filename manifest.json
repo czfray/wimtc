@@ -1,0 +1,9 @@
+{
+    "name": "# 我架地鐵幾時嚟 When Is My Train Coming",
+    "short_name": "WIMTC",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#2f3542",
+    "theme_color": "#ffffff"
+}

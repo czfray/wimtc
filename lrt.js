@@ -2,6 +2,14 @@ let response = await fetch("lrt_stations.json");
 const stations = await response.json();
 
 const stnSelector = document.getElementById("selectStn");
+const timeShower = document.getElementById("time");
+
+const lrtList = document.getElementById("lrtList");
+const platformTemplate = document.getElementById("platformTemplate");
+const lrtTemplate = document.getElementById("lrtTemplate");
+const failureTemplate = document.getElementById("failureTemplate");
+
+let time;
 
 for (const [code, station] of Object.entries(stations)){
     const newOption = document.createElement("option");
@@ -21,11 +29,59 @@ else{
 
 let platformObjs;
 
+update();
+
 stnSelector.addEventListener("change", () => {
     localStorage.setItem("lrtstation", stnSelector.value);
-    updateLists();
-    //update
+    update();
 });
+
+setInterval(update, 5000);
+
+async function update(){
+    await updateLists();
+    updateVisuals();
+}
+
+function updateVisuals(){
+    lrtList.replaceChildren();
+    for (const platformObj of platformObjs){
+        const platformVisual = platformTemplate.content.cloneNode(true);
+        platformVisual.querySelector(".platformName").textContent = platformObj.id + "號月台 Platform " + platformObj.id; 
+        
+        const lrtContainer = platformVisual.querySelector(".lrts");
+        for (const [route, mins] of Object.entries(platformObj["lrts"])){
+            const lrtVisual = lrtTemplate.content.cloneNode(true);
+            
+            const routeInfo = route.split(",");
+            lrtVisual.querySelector(".lrtNo").textContent = routeInfo[0];
+            lrtVisual.querySelector(".lrtDest").textContent = routeInfo[2] + " " + routeInfo[1];
+
+
+            for (let i = 0; i < 2; i++) {
+                let minText;
+                if (i < mins.length){
+                    minText = mins[i];
+                } else {
+                    minText = "-";
+                }
+                lrtVisual.querySelector(".lrtMin" + i).textContent = minText;
+            }
+            lrtContainer.appendChild(lrtVisual);
+        }
+        platformVisual.appendChild(lrtContainer);
+        lrtList.appendChild(platformVisual);
+    }
+
+    if (platformObjs.length <= 0){
+        const noLrtVisual = failureTemplate.content.cloneNode(true);
+        noLrtVisual.querySelector(".failtc").textContent = "呢個站依家冇車，或者個app壞咗";
+        noLrtVisual.querySelector(".failen").textContent = "Stopped service or connection failure";
+        lrtList.appendChild(noLrtVisual);
+    }
+
+    timeShower.textContent = "最後更新 Last Update: " + time;
+}
 
 async function updateLists(){
     console.log("Updating lists...");
@@ -51,6 +107,7 @@ async function updateLists(){
         }
         platformObjs.push(platformObj);
     }
+    time = lrtData.system_time;
     console.log(platformObjs);
 }
 
@@ -69,7 +126,7 @@ function getLRTs(route_list){
         } else if (time.includes("min")){
             time = time.replace("min", "").trim();
         } else if (time.toLowerCase() == "departing"){
-            time = "Left";
+            time = "Lft";
         }
         else {
             time = "Arr";
