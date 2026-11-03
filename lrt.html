@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>我架輕鐵幾時嚟 WIMLRC</title>
+        <meta name="description" content="即時查詢新界西輕鐵到站時間 Check real-time LRT arrival times in New Territories">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Xmind:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="lrt.js"></script>
+
+        <link rel="icon" type="image/png" href="icon.png">
+        <link rel="apple-touch-icon" href="icon.png">
+
+    </head>
+    <body>
+
+        <br>
+        <button onclick="window.location.href='index.html'" class="mtrbut">轉地鐵 MTR</button>
+
+        <h1 class="white bold center top">
+            <span class="big">我架<span class="green">輕鐵</span>幾時嚟？</span>
+            <br>
+            <span class="medium">When is my <span class="green">cow</span> coming?</span>
+        </h1>
+
+        <p id = "time" class = "dirtywhite center thin extrasmall">
+            最後更新 Last Update: NA
+        </p>
+
+        <br>
+            <select id="selectStn" class="dirtywhite"></select>
+        <br>
+
+        <div id="lrtList"></div>
+
+        <template id="platformTemplate">
+            <h2 class="platformName dirtywhite small bold center"></h2>
+            <div class="lrts"></div>
+        </template>
+
+        <template id="lrtTemplate">
+            <p class="lrt white center nomargin">
+                <span class="lrtName"></span>
+                <span class="lrtMin0"></span>
+                <span class="lrtMin1"></span>
+                <span class="lrtMin2"></span>
+                <span class="lrtMin3"></span>
+            </p>
+        </template>
+
+        <template id="failureTemplate">
+            <br>
+            <p class="failtc dirtywhite small bold center nomargin"></p>
+            <p class="failen dirtywhite small thin center nomargin"></p>
+        </template>
+        
+    </body>
+
+</html>
+
+

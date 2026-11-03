@@ -61,6 +61,10 @@ p {
     color: #dfe4ea;
 }
 
+.green{
+    color: #7bed9f;
+}
+
 .train {
     display: grid;
     grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
@@ -75,7 +79,7 @@ p {
 }
 
 .top{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 select {
@@ -83,7 +87,7 @@ select {
     font-size: clamp(14px, 3vw, 18px);
     border: 3px solid #a4b0be;
     border-radius: 8px;
-    width: 250px;
+    width: 275px;
     background-color: #57606f;
     text-align: center;
     font-family: 'Xmind', sans-serif;
@@ -92,6 +96,30 @@ select {
     margin: 0 auto;
     appearance: none;
     -webkit-appearance: none;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+    width: 100px;
+    background-color: #57606f;
+    font-family: 'Xmind', sans-serif;
+    text-align-last: center;
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lrtbut{
+    color: #7bed9f;
+    border: 3px solid #7bed9f;
+}
+
+.mtrbut{
+    color: #ff4757;
+    border: 3px solid #ff4757;
 }
 
 html {
